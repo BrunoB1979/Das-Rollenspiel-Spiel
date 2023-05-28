@@ -1,0 +1,77 @@
+﻿<Window x:Class="RPG.Hauptmenue"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Hauptmenue" Height="720" Width="1200" WindowStyle="None" WindowState="Maximized">
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <ColorAnimation Storyboard.TargetProperty="Background.Color"
+                                    From="White" To="Black" Duration="0:0:3"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid x:Name="MainGrid">
+        <Image x:Name="Image1" Stretch="UniformToFill">
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="Image.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                             From="0.0" To="1.0" Duration="0:0:5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+        <Image x:Name="Image2" Stretch="UniformToFill" Panel.ZIndex="1">
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="Image.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                             From="0.0" To="1.0" Duration="0:0:5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+        <Image x:Name="Image3" Stretch="UniformToFill" Panel.ZIndex="2">
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="Image.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                             From="0.0" To="1.0" Duration="0:0:5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+        <Grid x:Name="ButtonGrid" Panel.ZIndex="3" Visibility="Hidden">
+            <Grid.Background>
+                <SolidColorBrush Color="Transparent" Opacity="1"/>
+            </Grid.Background>
+            <StackPanel x:Name="Titel" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity=".9">
+                <StackPanel.Background>
+                    <SolidColorBrush Color="Black" Opacity="1"/>
+                </StackPanel.Background>
+                <Label x:Name="Haupttitel" Content="RPG" FontFamily="Chiller" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="10,10,10,0" FontSize="72" Foreground="#FFE10A0A" FontWeight="Bold">
+                    <Label.Background>
+                        <SolidColorBrush Opacity="1"/>
+                    </Label.Background>
+                </Label>
+                <Label x:Name="Untertitel" Content="Das Rollenspiel-Spiel" FontFamily="Chiller" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="10,0,10,10" FontSize="36" Foreground="White" FontWeight="Bold"/>
+                <Button x:Name="Startbutton" Content="Neues Spiel" MinWidth="400" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" MinHeight="50" Margin="20,20,20,20" FontFamily="Comic Sans MS" FontSize="20" FontWeight="Bold" BorderThickness="5,5,5,5" Click="Button_Click_1" />
+                <Button Content="Spielstand fortsetzen" MinWidth="400" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" MinHeight="50" Margin="20,20,20,20" FontFamily="Comic Sans MS" FontSize="20" FontWeight="Bold" BorderThickness="5,5,5,5" />
+                <Button Content="Einstellungen" MinWidth="400" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" MinHeight="50" Margin="20,20,20,20" FontFamily="Comic Sans MS" FontSize="20" FontWeight="Bold" BorderThickness="5,5,5,5" />
+                <Button Content="Spiel beenden" MinWidth="400" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" MinHeight="50" Margin="20,20,20,20" Click="Button_Click" FontFamily="Comic Sans MS" FontSize="20" FontWeight="Bold" BorderThickness="5,5,5,5" />
+                <Label x:Name="Version" Content="Mai 2023 - Version 0.1" FontFamily="Comic Sans MS" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="10,0,10,10" FontSize="14" Foreground="White"/>
+                <Label x:Name="BMP" Content="BMP Software" FontFamily="Agency FB" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="10,0,10,10" FontSize="22" FontWeight="Bold" Foreground="#FFCE96EB"/>
+                <Label x:Name="SSO" Content="Schlütersoft" FontFamily="Agency FB" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="10,0,10,10" FontSize="22" FontWeight="Bold" Foreground="#FFCE96EB"/>
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

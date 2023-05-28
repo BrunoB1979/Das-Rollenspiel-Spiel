@@ -1,0 +1,12 @@
+﻿<Window x:Name="Intro2" x:Class="RPG.IntroB"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="IntroB" Height="Auto" Width="Auto" WindowStartupLocation="CenterScreen" Loaded="IntroB_Loaded" WindowStyle="None" WindowState="Maximized">
+    <Grid x:Name="MainGrid">
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock x:Name="Title" Text="RPG" FontSize="200" Foreground="Red" Opacity="0" FontFamily="Chiller" Height="184" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBlock x:Name="Subtitle" Text="Das Rollenspiel-Spiel" Foreground="Black" FontSize="48" HorizontalAlignment="Center" Margin="0,20,0,0" Opacity="0" FontFamily="Comic Sans MS" FontWeight="Bold" />
+            <TextBlock x:Name="Hint" Text="V. 0.1 - May 2023 - BMP Software - Schlütersoft" Foreground="Black" FontSize="32" HorizontalAlignment="Center" Margin="0,20,0,0" Opacity="0" />
+        </StackPanel>
+    </Grid>
+</Window>

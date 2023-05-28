@@ -1,0 +1,204 @@
+﻿<Window x:Class="RPG.Charakter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RPG"
+        mc:Ignorable="d" WindowStyle="None" WindowState="Maximized" Background="Black">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" MinWidth="100"/>
+            <ColumnDefinition Width="100" MinWidth="100"/>
+            <ColumnDefinition Width="100" MinWidth="100"/>
+            <ColumnDefinition Width="250" MinWidth="250"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" MinHeight="40"/>
+            <RowDefinition Height="40" MinHeight="40"/>
+            <RowDefinition MinHeight="300" Height="1"/>
+
+            <RowDefinition Height="200" MinHeight="200"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="200" MinHeight="200"/>
+                <RowDefinition Height="30" MinHeight="30"/>
+                <RowDefinition Height="300" MinHeight="300"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="3" TextWrapping="Wrap" Text="TextBlock" Grid.ColumnSpan="6" Grid.RowSpan="6" FontFamily="Calibri" FontSize="14" FontWeight="Bold" Background="White" Margin="10,5,10,5" TextAlignment="Center"/>
+            <Image x:Name="Gender" Source="/images/neutral.png" Grid.RowSpan="2" Grid.ColumnSpan="6" Margin="10,5,10,5"/>
+            <Label Grid.Column="0" Content="Label" Grid.Row="2" Grid.ColumnSpan="7" BorderBrush="White" Background="White" Margin="10,5,10,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0"/>
+        </Grid>
+        <Label Content="RPG-Charakterdesigner" FontFamily="Chiller" FontSize="36" Foreground="#FFED1212" FontWeight="Bold" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Column="3"/>
+        <TabControl Grid.Column="3" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalContentAlignment="Left" VerticalContentAlignment="Top">
+            <TabItem x:Name="TabA" Header="Geschlecht" FontFamily="Comic Sans MS" FontSize="18" FontWeight="Bold" BorderThickness="2,2,2,2" Margin="10,1,10,0" MinWidth="200" BorderBrush="White">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" MinHeight="40"/>
+                        <RowDefinition Height="40" MinHeight="40"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Treffe jetzt Deine erste Entscheidung" FontFamily="Comic Sans MS" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" Grid.ColumnSpan="6" Grid.RowSpan="1"/>
+                    <Button x:Name="BTN1" Content="Geschlecht bestätigen" Click="BTN1_Click" IsEnabled="False" Grid.Column="6" Grid.ColumnSpan="2" Grid.RowSpan="1"/>
+                    <RadioButton x:Name="RBMale" Content="männlich" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF1175A0" GroupName="Gender" Checked="RBMale_Checked" Grid.Column="6" Grid.Row="1" Grid.ColumnSpan="2"/>
+                    <RadioButton x:Name="RBFemale" Content="weiblich" HorizontalContentAlignment="Center" GroupName="Gender" Checked="RBFemale_Checked" VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Foreground="#FFFF5BCD"/>
+                    <Label Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.RowSpan="1" Grid.Row="1" Grid.ColumnSpan="3"/>
+                    <TextBlock Grid.Column="0" Grid.Row="3" TextWrapping="Wrap" Text="TextBlock" Grid.ColumnSpan="8"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TabB" Header="Herkunft" FontFamily="Comic Sans MS" FontSize="18" FontWeight="Bold" BorderThickness="2,2,2,2" Margin="10,1,10,0" MinWidth="200" BorderBrush="White">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" MinHeight="40"/>
+                        <RowDefinition Height="40" MinHeight="40"/>
+                        <RowDefinition Height="338*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Wähle jetzt Deine Herkunft" FontFamily="Comic Sans MS" FontSize="20" Grid.Column="0" Grid.ColumnSpan="6" Grid.Row="0"/>
+                    <RadioButton x:Name="Mensch" Content="Mensch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" GroupName="Race" Checked="Mensch_Checked" Grid.Row="1" Grid.Column="1"/>
+                    <RadioButton x:Name="Zwerg" Content="Zwerg" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" GroupName="Race" Checked="Zwerg_Checked" Grid.Row="1" Grid.Column="3"/>
+                    <RadioButton x:Name="Elf" Content="Elf" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" GroupName="Race" IsChecked="False" Checked="Elf_Checked" Grid.Row="1" Grid.Column="5"/>
+                    <RadioButton x:Name="Ork" Content="Ork" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" GroupName="Race" Checked="Ork_Checked" Grid.Row="1" Grid.Column="7"/>
+                    <Button x:Name="BTN2" Content="Rasse bestätigen" Click="BTN2_Click" IsEnabled="False" Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="6"/>
+                    <TextBox TextWrapping="Wrap" Text="Mensch&#xA;&#xA;Ausdauer +1, Geschwindigkeit +1, Intelligenz +1&#xD;&#xA;&#xD;&#xA;Zwerg&#xA;&#xA;Kraft +1, Ausdauer +2&#xD;&#xA;&#xD;&#xA;Elf&#xA;&#xA;Geschwindigkeit +1, Intelligenz +1, Charisma +1&#xD;&#xA;&#xD;&#xA;Ork&#xA;&#xA;Kraft +3, Ausdauer +2, Intelligenz -1, Charisma -2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Comic Sans MS" FontSize="14" FontWeight="Normal" Grid.Row="2" Grid.ColumnSpan="8" Grid.RowSpan="3"/>
+                    <Label Content="Label" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+                </Grid>
+
+
+
+            </TabItem>
+            <TabItem x:Name="TabC" Header="Kampfklasse" FontFamily="Comic Sans MS" FontSize="18" FontWeight="Bold" BorderThickness="2,2,2,2" Margin="10,1,10,0" MinWidth="200" BorderBrush="White">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" MinHeight="40"/>
+                        <RowDefinition Height="40" MinHeight="40"/>
+                        <RowDefinition Height="351*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Wähle jetzt Deine Berufung" FontFamily="Comic Sans MS" FontSize="20" Grid.ColumnSpan="6" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <RadioButton x:Name="Krieger" Content="Krieger" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" GroupName="Klasse" Checked="Krieger_Checked" Grid.ColumnSpan="1" Grid.RowSpan="1" Grid.Row="1" Grid.Column="1"/>
+                    <RadioButton x:Name="Schurke" Content="Schurke" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" GroupName="Klasse" Checked="Schurke_Checked" Grid.ColumnSpan="1" Grid.RowSpan="1" Grid.Row="1" Grid.Column="3"/>
+                    <RadioButton x:Name="Jäger" Content="Jäger" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" GroupName="Klasse" IsChecked="False" Checked="Jäger_Checked" Grid.ColumnSpan="1" Grid.RowSpan="1" Grid.Column="5" Grid.Row="1"/>
+                    <RadioButton x:Name="Magier" Content="Magier" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" GroupName="Klasse" Checked="Magier_Checked" Grid.ColumnSpan="1" Grid.RowSpan="1" Grid.Row="1" Grid.Column="7"/>
+                    <Button x:Name="BTN4" Content="Klasse bestätigen" IsEnabled="False" Click="BTN4_Click" Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="2" Padding="0,0,0,0"/>
+                    <TextBox TextWrapping="Wrap" Text="Krieger:&#xA;&#xA;Kraft +1, Ausdauer +1&#xD;&#xA;&#xD;&#xA;Schurke:&#xA;&#xA;Geschwindigkeit +1, Charisma +1&#xA;&#xD;&#xA;Jäger:&#xA;&#xA;Ausdauer +1, Geschwindigkeit +1&#xD;&#xA;&#xD;&#xA;Magier:&#xA;&#xA;Kraft -1, Ausdauer -1, Intelligenz +2, Charisma +2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="8" FontSize="14" FontWeight="Normal"/>
+                    <Label Content="Label" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Grid>
+
+
+
+
+            </TabItem>
+            <TabItem x:Name="TabD" Header="Fähigkeiten" FontFamily="Comic Sans MS" FontSize="18" FontWeight="Bold" BorderThickness="2,2,2,2" Margin="10,1,10,0" MinWidth="200" BorderBrush="White">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" MinHeight="40"/>
+                        <RowDefinition Height="40" MinHeight="40"/>
+                        <RowDefinition Height="174*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Verbessere jetzt Deine Fähigkeiten" FontFamily="Comic Sans MS" FontSize="20" Grid.ColumnSpan="6" Grid.RowSpan="1" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Button x:Name="ButtonA" Content="Kraft" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="20" FontWeight="Bold" FontStyle="Italic" Click="ButtonA_Click" Grid.Row="1" Grid.Column="2"/>
+                    <Button x:Name="ButtonB" Content="Ausdauer" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="20" FontWeight="Bold" FontStyle="Italic" IsEnabled="False" Click="ButtonB_Click" Grid.Row="1" Grid.Column="3"/>
+                    <Button x:Name="ButtonC" Content="Geschicklichkeit" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="20" FontWeight="Bold" FontStyle="Italic" IsEnabled="False" Click="ButtonC_Click" Grid.Row="1" Grid.Column="4"/>
+                    <Button x:Name="ButtonD" Content="Intelligenz" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="20" FontWeight="Bold" FontStyle="Italic" IsEnabled="False" Click="ButtonD_Click" Grid.Row="1" Grid.Column="5"/>
+                    <Button x:Name="ButtonE" Content="Charisma" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="20" FontWeight="Bold" FontStyle="Italic" Click="ButtonE_Click" IsEnabled="False" Grid.Row="1" Grid.Column="6"/>
+                    <Button x:Name="ButtonF" Content="Spezial" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="20" FontWeight="Bold" FontStyle="Italic" IsEnabled="False" Click="ButtonF_Click" Grid.Row="1" Grid.Column="7"/>
+                    <Button x:Name="BTN5" Content="Training beenden" IsEnabled="False" Click="BTN5_Click" Grid.Row="0" Grid.Column="6" Grid.RowSpan="1" Grid.ColumnSpan="2"/>
+
+                    <TextBox TextWrapping="Wrap" Text="TextBox" Grid.Row="3" Grid.ColumnSpan="8" FontSize="14" FontWeight="Normal"/>
+                    <Label Content="Label" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.RowSpan="1" Grid.ColumnSpan="2"/>
+
+
+
+
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TabE" Header="Abschluss" FontFamily="Comic Sans MS" FontSize="18" FontWeight="Bold" BorderThickness="2,2,2,2" Margin="10,1,10,0" MinWidth="200" BorderBrush="White">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+        <Grid Grid.Row="4" Grid.ColumnSpan="3" Grid.RowSpan="1" Background="Black">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="70" MinWidth="50"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" MinHeight="40"/>
+                <RowDefinition Height="40" MinHeight="40"/>
+                <RowDefinition Height="40" MinHeight="40"/>
+                <RowDefinition Height="40" MinHeight="40"/>
+                <RowDefinition Height="40" MinHeight="40"/>
+            </Grid.RowDefinitions>
+            <Label Content="Kraft" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="18" FontWeight="Bold" HorizontalAlignment="Stretch" BorderBrush="Black" Background="White" Margin="10,0,0,0"/>
+            <Label Content="Ausdauer" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="18" FontWeight="Bold" Grid.Row="1" HorizontalAlignment="Stretch" Background="White" Margin="10,0,0,0"/>
+            <Label Content="Geschwindigkeit" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="18" FontWeight="Bold" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" Background="White" Margin="10,0,0,0"/>
+            <Label Content="Intelligenz" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="18" FontWeight="Bold" Grid.Row="3" HorizontalAlignment="Stretch" Background="White" Margin="10,0,0,0"/>
+            <Label Content="Charisma" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="18" FontWeight="Bold" Grid.RowSpan="1" Grid.Row="4" HorizontalAlignment="Stretch" Background="White" Margin="10,0,0,0"/>
+            <TextBox x:Name="TBoxCharisma" TextWrapping="Wrap" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="18" FontWeight="Bold" FontStyle="Italic" Text="10" Grid.Row="4" RenderTransformOrigin="1.336,4.833" Grid.Column="1" HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="TBoxGeschwindigkeit" TextWrapping="Wrap" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="18" FontWeight="Bold" FontStyle="Italic" Text="10" Grid.Row="2" Grid.Column="1" HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="TBoxIntelligenz" TextWrapping="Wrap" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="18" FontWeight="Bold" FontStyle="Italic" Text="10" Grid.ColumnSpan="1" Grid.RowSpan="1" Grid.Row="3" Grid.Column="1" RenderTransformOrigin="-0.008,4.733" HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="TBoxAusdauer" TextWrapping="Wrap" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="18" FontWeight="Bold" FontStyle="Italic" Text="10" Grid.RowSpan="1" Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="TBoxKraft" TextWrapping="Wrap" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="18" FontWeight="Bold" FontStyle="Italic" Text="10" Grid.Row="0" Grid.Column="4" HorizontalContentAlignment="Center"/>
+
+        </Grid>
+        <TextBox x:Name="TBoxBeruf" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="18" FontWeight="Bold" Grid.Row="1" Margin="10,5,5,5"/>
+        <TextBox x:Name="TBoxRasse" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="18" FontWeight="Bold" Grid.Row="1" Grid.Column="1" Margin="5,5,5,5"/>
+        <TextBox x:Name="TBoxGender" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="18" FontWeight="Bold" Grid.Column="2" Grid.Row="1" Margin="5,5,10,5"/>
+        <TextBox TextWrapping="Wrap" Text="Nobody Namenlos" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="3" Margin="10,10,10,5"/>
+
+
+    </Grid>
+</Window>
